@@ -1,4 +1,5 @@
 import BasicInfoForm from "@/components/basicInfo/BasicInfoForm";
+import CoverLetterForm from "@/components/coverLetter/CoverLetterForm";
 import EducationForm from "@/components/education/EducationForm";
 import ExperienceForm from "@/components/experience/ExperienceForm";
 import LanguagesForm from "@/components/languages/LanguagesForm";
@@ -31,6 +32,7 @@ const HomePage = () => {
           <EducationForm />
           <LanguagesForm />
           <ResumeUpload />
+          <CoverLetterForm />
         </div>
       </div>
     </main>
