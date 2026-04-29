@@ -2,6 +2,7 @@ import BasicInfoForm from "@/components/basicInfo/BasicInfoForm";
 import EducationForm from "@/components/education/EducationForm";
 import ExperienceForm from "@/components/experience/ExperienceForm";
 import LanguagesForm from "@/components/languages/LanguagesForm";
+import ResumeUpload from "@/components/resume/ResumeUpload";
 import SkillsForm from "@/components/skills/SkillsForm";
 import SummaryForm from "@/components/summary/SummaryForm";
 
@@ -29,6 +30,7 @@ const HomePage = () => {
           <ExperienceForm />
           <EducationForm />
           <LanguagesForm />
+          <ResumeUpload />
         </div>
       </div>
     </main>
