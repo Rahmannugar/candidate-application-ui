@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
 import AppProvider from "@/lib/client/AppProvider";
 import "byte-datepicker/styles.css";
 import "./globals.css";
-
-const roboto = Roboto({
-  variable: "--font-roboto",
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Candidate Application",
@@ -21,11 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${roboto.variable} h-full antialiased`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className="min-h-full">
         <AppProvider>{children}</AppProvider>
       </body>

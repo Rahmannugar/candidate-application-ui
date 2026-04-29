@@ -24,7 +24,7 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-danger: var(--danger);
-  --font-sans: var(--font-roboto);
+  --font-sans: Roboto, Arial, Helvetica, sans-serif;
 }
 
 .dark {
@@ -43,7 +43,7 @@
 .byte-datepicker-container {
   --byte-accent: var(--primary);
   --byte-accent-hover: var(--primary);
-  --byte-font: var(--font-roboto), Arial, Helvetica, sans-serif;
+  --byte-font: Roboto, Arial, Helvetica, sans-serif;
 }
 
 .byte-datepicker-container.byte-dark {
@@ -62,7 +62,7 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 }
 
 button,

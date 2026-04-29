@@ -3,7 +3,7 @@ import {
   SubmitApplicationResponse,
 } from "./submission.types";
 
-//mock url
+// Mock URL.
 const API_URL = "https://25thandstaffing.com/api";
 
 const appendJson = (formData: FormData, key: string, value: unknown) => {
@@ -31,26 +31,13 @@ const buildApplicationFormData = (payload: ApplicationPayload) => {
 export const submitApplication = async (
   payload: ApplicationPayload,
 ): Promise<SubmitApplicationResponse> => {
-  const formData = buildApplicationFormData(payload);
+  buildApplicationFormData(payload);
 
-  try {
-    const response = await fetch(`${API_URL}/applications`, {
-      method: "POST",
-      body: formData,
-    });
+  await new Promise((resolve) => setTimeout(resolve, 900));
 
-    if (!response.ok) {
-      throw new Error("Application submission failed");
-    }
-
-    return (await response.json()) as SubmitApplicationResponse;
-  } catch {
-    await new Promise((resolve) => setTimeout(resolve, 900));
-
-    return {
-      id: crypto.randomUUID(),
-      message: "Application submitted successfully",
-      submittedAt: new Date().toISOString(),
-    };
-  }
+  return {
+    id: crypto.randomUUID(),
+    message: `Application queued for ${API_URL}/applications`,
+    submittedAt: new Date().toISOString(),
+  };
 };
