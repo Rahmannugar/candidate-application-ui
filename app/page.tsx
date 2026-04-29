@@ -1,4 +1,5 @@
 import BasicInfoForm from "@/components/basicInfo/BasicInfoForm";
+import SummaryForm from "@/components/summary/SummaryForm";
 
 const HomePage = () => {
   return (
@@ -17,7 +18,10 @@ const HomePage = () => {
           </p>
         </div>
 
-        <BasicInfoForm />
+        <div className="space-y-5">
+          <BasicInfoForm />
+          <SummaryForm />
+        </div>
       </div>
     </main>
   );
