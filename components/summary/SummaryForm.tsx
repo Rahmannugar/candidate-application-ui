@@ -1,6 +1,6 @@
 "use client";
 
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   SummaryFormValues,
@@ -16,15 +16,19 @@ export default function SummaryForm() {
 
   const {
     register,
+    control,
     formState: { errors },
-    watch,
   } = useForm<SummaryFormValues>({
     resolver: zodResolver(summarySchema),
     mode: "onBlur",
     defaultValues: summary,
   });
 
-  const professionalSummary = watch("professionalSummary");
+  const professionalSummary =
+    useWatch({
+      control,
+      name: "professionalSummary",
+    }) ?? "";
   const summaryLength = professionalSummary.length;
 
   const headlineField = register("headline", {

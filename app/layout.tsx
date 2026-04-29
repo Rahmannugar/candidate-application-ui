@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import AppProvider from "@/lib/client/AppProvider";
+import "byte-datepicker/styles.css";
 import "./globals.css";
 
 const roboto = Roboto({
