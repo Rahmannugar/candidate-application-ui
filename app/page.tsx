@@ -5,6 +5,7 @@ import ExperienceForm from "@/components/experience/ExperienceForm";
 import LanguagesForm from "@/components/languages/LanguagesForm";
 import ResumeUpload from "@/components/resume/ResumeUpload";
 import SkillsForm from "@/components/skills/SkillsForm";
+import SubmitApplicationButton from "@/components/submission/SubmitApplicationButton";
 import SummaryForm from "@/components/summary/SummaryForm";
 
 const HomePage = () => {
@@ -12,15 +13,13 @@ const HomePage = () => {
     <main className="min-h-screen bg-background px-4 py-8 text-foreground sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8">
-          <p className="text-sm font-medium text-primary">
-            25th & Staffing
-          </p>
+          <p className="text-sm font-medium text-primary">Staffing Co.</p>
           <h1 className="mt-2 text-3xl font-bold tracking-normal text-foreground">
             Candidate application
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
-            Share your details so the hiring team can review your profile and
-            resume.
+            Pls share your details so the hiring team can review your profile
+            and resume.
           </p>
         </div>
 
@@ -33,6 +32,7 @@ const HomePage = () => {
           <LanguagesForm />
           <ResumeUpload />
           <CoverLetterForm />
+          <SubmitApplicationButton />
         </div>
       </div>
     </main>
