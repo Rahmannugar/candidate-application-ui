@@ -14,7 +14,7 @@ const HomePage = () => {
     <main className="min-h-screen bg-background px-4 py-8 text-foreground sm:px-6 lg:px-8">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8 flex items-start justify-between gap-4">
-          <div>
+          <div className="min-w-0 flex-1">
             <p className="text-sm font-medium text-primary">Staffing Co.</p>
             <h1 className="mt-2 text-3xl font-bold tracking-normal text-foreground">
               Candidate application
@@ -25,7 +25,9 @@ const HomePage = () => {
             </p>
           </div>
 
-          <ThemeToggle />
+          <div className="shrink-0">
+            <ThemeToggle />
+          </div>
         </div>
 
         <div className="space-y-5">

@@ -20,12 +20,12 @@ const basicInfoInputs: BasicInfoInput[] = [
   {
     name: "fullName",
     label: "Full name",
-    placeholder: "Ada Johnson",
+    placeholder: "Abdulrahmon Adenuga",
   },
   {
     name: "email",
     label: "Email address",
-    placeholder: "ada@example.com",
+    placeholder: "adenuga@example.com",
     type: "email",
   },
   {
@@ -42,19 +42,19 @@ const basicInfoInputs: BasicInfoInput[] = [
   {
     name: "linkedInUrl",
     label: "LinkedIn URL",
-    placeholder: "https://linkedin.com/in/ada",
+    placeholder: "https://linkedin.com/in/rahmannugar",
     type: "url",
   },
   {
     name: "portfolioUrl",
     label: "Portfolio URL",
-    placeholder: "https://ada.dev",
+    placeholder: "https://rahmannugar.vercel.app",
     type: "url",
   },
   {
     name: "githubUrl",
     label: "GitHub URL",
-    placeholder: "https://github.com/ada",
+    placeholder: "https://github.com/rahmannugar",
     type: "url",
   },
 ];
