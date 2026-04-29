@@ -1,4 +1,5 @@
 import BasicInfoForm from "@/components/basicInfo/BasicInfoForm";
+import SkillsForm from "@/components/skills/SkillsForm";
 import SummaryForm from "@/components/summary/SummaryForm";
 
 const HomePage = () => {
@@ -21,6 +22,7 @@ const HomePage = () => {
         <div className="space-y-5">
           <BasicInfoForm />
           <SummaryForm />
+          <SkillsForm />
         </div>
       </div>
     </main>
