@@ -1,11 +1,16 @@
 "use client";
 
-import ByteDatePicker from "byte-datepicker";
 import { ChangeEvent, FormEvent, useState } from "react";
+import dynamic from "next/dynamic";
 import { experienceInputSchema } from "@/lib/experience/experienceSchema";
 import { ExperienceInput } from "@/lib/experience/experience.types";
 import { useExperienceStore } from "@/lib/experience/experienceStore";
 import ExperienceItem from "./ExperienceItem";
+
+const MonthYearPicker = dynamic(
+  () => import("@/components/common/MonthYearPicker"),
+  { ssr: false },
+);
 
 const initialExperienceInput: ExperienceInput = {
   role: "",
@@ -168,13 +173,10 @@ export default function ExperienceForm() {
               Start date
             </span>
             <div className="mt-2">
-              <ByteDatePicker
+              <MonthYearPicker
                 value={toDateValue(experienceInput.startDate)}
                 onChange={handleStartDateChange}
                 placeholder="Select start date"
-                formatString="month yyyy"
-                clearable
-                theme="system"
               />
             </div>
             {errors.startDate ? (
@@ -189,14 +191,11 @@ export default function ExperienceForm() {
               End date
             </span>
             <div className="mt-2">
-              <ByteDatePicker
+              <MonthYearPicker
                 value={toDateValue(experienceInput.endDate)}
                 onChange={handleEndDateChange}
                 placeholder="Select end date"
-                formatString="month yyyy"
-                clearable
                 disabled={experienceInput.isCurrentRole}
-                theme="system"
               />
             </div>
             {errors.endDate ? (
@@ -219,7 +218,7 @@ export default function ExperienceForm() {
 
         <label className="block" htmlFor="description">
           <span className="text-sm font-medium text-foreground">
-            Description
+            Description optional
           </span>
           <textarea
             id="description"

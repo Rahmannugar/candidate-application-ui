@@ -11,7 +11,6 @@ export const experienceInputSchema = z
     description: z
       .string()
       .trim()
-      .min(30, "Description should be at least 30 characters")
       .max(900, "Description should be 900 characters or fewer"),
   })
   .refine((value) => value.isCurrentRole || value.endDate.length > 0, {

@@ -3,6 +3,7 @@ import {
   SubmitApplicationResponse,
 } from "./submission.types";
 
+//mock url
 const API_URL = "https://25thandstaffing.com/api";
 
 const appendJson = (formData: FormData, key: string, value: unknown) => {

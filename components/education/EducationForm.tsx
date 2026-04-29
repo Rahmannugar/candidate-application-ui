@@ -1,11 +1,16 @@
 "use client";
 
-import ByteDatePicker from "byte-datepicker";
 import { ChangeEvent, FormEvent, useState } from "react";
+import dynamic from "next/dynamic";
 import { educationInputSchema } from "@/lib/education/educationSchema";
 import { EducationInput } from "@/lib/education/education.types";
 import { useEducationStore } from "@/lib/education/educationStore";
 import EducationItem from "./EducationItem";
+
+const MonthYearPicker = dynamic(
+  () => import("@/components/common/MonthYearPicker"),
+  { ssr: false },
+);
 
 const initialEducationInput: EducationInput = {
   school: "",
@@ -55,7 +60,10 @@ export default function EducationForm() {
   const handleTextChange = (
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    updateEducationInput(event.target.name as keyof EducationInput, event.target.value);
+    updateEducationInput(
+      event.target.name as keyof EducationInput,
+      event.target.value,
+    );
   };
 
   const handleCurrentChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -188,13 +196,10 @@ export default function EducationForm() {
               Start date
             </span>
             <div className="mt-2">
-              <ByteDatePicker
+              <MonthYearPicker
                 value={toDateValue(educationInput.startDate)}
                 onChange={handleStartDateChange}
                 placeholder="Select start date"
-                formatString="month yyyy"
-                clearable
-                theme="system"
               />
             </div>
             {errors.startDate ? (
@@ -207,14 +212,11 @@ export default function EducationForm() {
           <div>
             <span className="text-sm font-medium text-foreground">End date</span>
             <div className="mt-2">
-              <ByteDatePicker
+              <MonthYearPicker
                 value={toDateValue(educationInput.endDate)}
                 onChange={handleEndDateChange}
                 placeholder="Select end date"
-                formatString="month yyyy"
-                clearable
                 disabled={educationInput.isCurrent}
-                theme="system"
               />
             </div>
             {errors.endDate ? (
